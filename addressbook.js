@@ -58,5 +58,13 @@ class AddressBook {
             throw new Error("Contact not found.");
         }
     }
+
+    deleteContact(name) {
+        let initialLength = this.contacts.length;
+        this.contacts = this.contacts.filter(contact => contact.firstName !== name);
+        if (this.contacts.length === initialLength) {
+            throw new Error("Contact not found.");
+        }
+    }
 }
 
