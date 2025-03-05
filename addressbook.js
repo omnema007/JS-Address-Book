@@ -122,3 +122,28 @@ class AddressBook {
     }
 }
 
+let addressBook = new AddressBook();
+
+let contact1 = new Contact("John", "Doe", "Street 123", "New York", "NY", "10001", "1 9876543210", "john.doe@example.com");
+let contact2 = new Contact("Jane", "Smith", "Avenue 456", "Los Angeles", "CA", "90001", "1 9876543211", "jane.smith@example.com");
+let contact3 = new Contact("Emily", "Clark", "Boulevard 789", "Chicago", "IL", "60601", "1 9876543212", "emily.clark@example.com");
+
+addressBook.addContact(contact1);
+addressBook.addContact(contact2);
+addressBook.addContact(contact3);
+
+console.log("Before Sorting:");
+addressBook.printContacts();
+
+addressBook.sortByCity();
+console.log("\nSorted by City:");
+addressBook.printContacts();
+
+addressBook.sortByState();
+console.log("\nSorted by State:");
+addressBook.printContacts();
+
+addressBook.sortByZip();
+console.log("\nSorted by Zip:");
+addressBook.printContacts();
+
