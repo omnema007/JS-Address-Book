@@ -92,5 +92,13 @@ class AddressBook {
             return result;
         }, {});
     }
+
+    getCountByCityOrState() {
+        return this.contacts.reduce((result, contact) => {
+            result.cityCounts[contact.city] = (result.cityCounts[contact.city] || 0) + 1;
+            result.stateCounts[contact.state] = (result.stateCounts[contact.state] || 0) + 1;
+            return result;
+        }, { cityCounts: {}, stateCounts: {} });
+    }
 }
 
