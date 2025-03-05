@@ -82,5 +82,15 @@ class AddressBook {
     searchByCityOrState(location) {
         return this.contacts.filter(contact => contact.city === location || contact.state === location);
     }
+
+    viewPersonsByCityOrState() {
+        return this.contacts.reduce((result, contact) => {
+            if (!result[contact.city]) result[contact.city] = [];
+            if (!result[contact.state]) result[contact.state] = [];
+            result[contact.city].push(contact);
+            result[contact.state].push(contact);
+            return result;
+        }, {});
+    }
 }
 
