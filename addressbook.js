@@ -49,5 +49,14 @@ class AddressBook {
     addContact(contact) {
         this.contacts.push(contact);
     }
+
+    editContact(name, updatedContact) {
+        let contact = this.contacts.find(c => c.firstName === name);
+        if (contact) {
+            Object.assign(contact, updatedContact);
+        } else {
+            throw new Error("Contact not found.");
+        }
+    }
 }
 
