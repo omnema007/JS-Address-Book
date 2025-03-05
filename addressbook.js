@@ -104,5 +104,21 @@ class AddressBook {
     sortContactsByName() {
         this.contacts.sort((a, b) => (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName));
     }
+
+    sortByCity() {
+        this.contacts.sort((a, b) => a.city.localeCompare(b.city));
+    }
+
+    sortByState() {
+        this.contacts.sort((a, b) => a.state.localeCompare(b.state));
+    }
+
+    sortByZip() {
+        this.contacts.sort((a, b) => a.zip.localeCompare(b.zip));
+    }
+
+    printContacts() {
+        this.contacts.forEach(contact => console.log(contact.toString()));
+    }
 }
 
