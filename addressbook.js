@@ -70,5 +70,13 @@ class AddressBook {
     getContactCount() {
         return this.contacts.reduce(count => count + 1, 0);
     }
+
+    findDuplicate(contact) {
+        let isDuplicate = this.contacts.some(c => c.firstName === contact.firstName && c.lastName === contact.lastName);
+        if (isDuplicate) {
+            throw new Error("Duplicate contact entry is not allowed.");
+        }
+        this.contacts.push(contact);
+    }
 }
 
