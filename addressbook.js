@@ -40,16 +40,14 @@ class Contact {
     }
 }
 
-// Example Usage
-try {
-    let contact1 = new Contact("John", "Doe", "Street 123", "New York", "NY", "10001", "1 9876543210", "john.doe@example.com");
-    console.log("Valid Contact:", contact1);
-} catch (error) {
-    console.error(error.message);
+
+class AddressBook {
+    constructor() {
+        this.contacts = [];
+    }
+
+    addContact(contact) {
+        this.contacts.push(contact);
+    }
 }
 
-try {
-    let contact2 = new Contact("jo", "smith", "St", "LA", "CA", "123", "98765", "invalid-email");
-} catch (error) {
-    console.error(error.message);
-}
